@@ -1,14 +1,13 @@
 require(quantmod)
 require(tseries)
 require(rugarch)
-eur_to_usd<-read.csv("C:\\Users\\Ritwij Verma\\OneDrive\\Documents\\udemy\\algorithmic_trading\\TimeSeries\\TradingStrategy\\EURUSD.csv")
+eur_to_usd<-read.csv("C:\\Users\\Ritwij Verma\\OneDrive\\Documents\\algorithmic_trading\\TimeSeries\\TradingStrategy\\EURUSD.csv")
 dates<-as.Date(as.character(eur_to_usd[,1]),format="%d/%m/%y",header=T)
 eur_to_usd[,1]=dates
 plot(eur_to_usd$C,type='l')
-#there is no adjusted closing price in FOREX trading
-returns<-diff(log(eur_to_usd$C))#only considering closing prices
+returns<-diff(log(eur_to_usd$C))
 returns
-window.length<-100#can even range to hundred
+window.length<-100
 forecasts.length<-(length(returns)-window.length)
 forecasts<-vector(mode = "numeric",length = forecasts.length)
 directions<-vector(mode ="numeric",length = forecasts.length)
@@ -66,7 +65,7 @@ strategy.direction.returns<-strategy.direction*returns[(window.length):(length(r
 strategy.direction.returns[1] <- 0 # as the first value returned Na(Invalid)
 #to build returns we need take cumulative sums of daily returns
 strategy.curve.data<-cumsum(strategy.direction.returns)
-# we will be comparing it with returns of long term investing
+#comparing it with returns of long term investing
 long.-term.ts<-xts(returns[(window.length):length(returns)],dates[(window.length):length(returns)])
 long.term.curve<-cumsum(long.term.ts)
 #clubbing them together
@@ -82,7 +81,6 @@ strategy_colors <- c( "green", "red")
 legend(x = 'bottomleft', legend = c("ARIMA&GARCH", "Long Term Investing"),
        lty = 1, col = strategy_colors)
 
-# this model was not able to profit in the 2008 crisis that means there is always some risks with its credibility
 
 
 
