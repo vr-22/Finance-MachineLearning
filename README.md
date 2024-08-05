@@ -29,3 +29,7 @@ Utilize dynamic programming (although I found Unsupervised Learning oriented clu
 Explore resources for background on likelihood functions and dynamic programming to inform the quantization process.
 
 FOREX-TradingStrategy.R : GARCH Forex Forecasting Strategy
+
+TCA.ipynb : Transaction Cost Analysis Project
+Optimal execution with nonlinear transient market impact: The Research Paper that inspired the Project (TCA)
+xnas-itch-20230703.tbbo.cv : The dataset used for developing the model and extracting the new features
