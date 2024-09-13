@@ -1,3 +1,30 @@
+ Cryptocurrency Price Prediction using LSTM & Multi-Head Attention Networks:
+
+ • Combined LSTM and Transformer Networks to predict crypto prices using a 5-year dataset, utilizing LSTM for
+ temporal dependencies and Transformer for attention mechanisms
+ • Used historical prices to forecast next-day prices, enhancing accuracy with the 8-Head Multi-Head Attention
+ feature
+ • Achieved a 0.001747 MSE on validation, showcasing the effectiveness of the integrated model
+
+FOREX-TradingStrategy.R : GARCH Forex Forecasting Strategy
+
+TCA.ipynb : Transaction Cost Analysis Project
+Optimal execution with nonlinear transient market impact: The Research Paper that inspired the Project (TCA)
+xnas-itch-20230703.tbbo.cv : The dataset used for developing the model and extracting the new features
+
+Stochastic (GBM based Forecasting) Strategy:
+
+StochasticDayTrading.py is the strategy that I implemented which centered around prdicting the next days AUD/USD Exchange rate by constrcuting a GBM process using previous 10 days of data.
+Report by Ritwij : is the Report which dicusses in depth about the startegies performance.
+dataset was scrapped from yahoo finance.
+
+ Slippage Calculation & Transaction Cost Analysis (TCA)
+ • Developed a multivariate regression model based on insights from the research paper ”Optimal Execution with
+ Nonlinear Transient Market Impact 2014” .
+ • Applied a log-linear decay model to analyze and predict transient market impacts, refining the precision of
+ Slippage calculations .
+ • Constructed and incorporated features like trade intensity, cumulative volume, and market resilience as
+ predictive factors for Slippage Analysis
 JP Morgan Chase & Co. Quantitative Research Virtual Experience Program on Forage- January 2024 :
 
 FRG1.py- Project for the PS in Task 1 :
@@ -27,9 +54,3 @@ Develop a rating map for FICO scores to credit ratings using quantization, aimin
 Consider various approaches, including approximating all entries in a bucket to minimize squared error or maximizing log-likelihood considering bucket boundaries and default probabilities.
 Utilize dynamic programming (although I found Unsupervised Learning oriented clustering techniques, especially Gaussian Mixture ,to be more useful)to address the quantization problem incrementally, possibly splitting it into subproblems based on FICO score ranges.
 Explore resources for background on likelihood functions and dynamic programming to inform the quantization process.
-
-FOREX-TradingStrategy.R : GARCH Forex Forecasting Strategy
-
-TCA.ipynb : Transaction Cost Analysis Project
-Optimal execution with nonlinear transient market impact: The Research Paper that inspired the Project (TCA)
-xnas-itch-20230703.tbbo.cv : The dataset used for developing the model and extracting the new features
